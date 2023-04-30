@@ -1,36 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Container, { Nav } from "react-bootstrap";
-import Col from "react-bootstrap";
-import Row from "react-bootstrap";
-import { Navbar} from "react-bootstrap"
-import Image from 'react-bootstrap/Image'
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import { Navbar, Nav, Image, DropdownButton, Dropdown, Button } from "react-bootstrap";
+import { Context } from "../store/appContext";
 
 export const NavbarMenu = () => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<Navbar>
 			<Navbar.Brand>
-				<Link to = "/">
+				<Link to="/">
 					<Image
-						src="src/img/Star_Wars_Logo..png"
+						src="https://logodownload.org/wp-content/uploads/2015/12/star-wars-logo-3-1.png"
 						height="40"
 						alt="Star Wars"
 					/>
 				</Link>
 			</Navbar.Brand>
-			<Nav className='mr-auto'>
-			<Link className="nav-link" to = "/planet">Planets</Link>
-			<Link className="nav-link" to = "/people">People</Link>
-			<Link className="nav-link" to = "/vehicle">Vehicles</Link>
-
-			</Nav>
-				<DropdownButton id="dropdown-basic-button" title="Favourites">
-      				<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-      				<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-      				<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    			</DropdownButton>
+			<Nav className="mr-auto" />
+			<DropdownButton id="dropdown-basic-button" title={`Favoritos ${store.favorites.length}`}>
+				{store.favorites.map((item, index) => {
+					return (
+						<Dropdown.Item key={index}>
+							{item}
+							<Button className="fas fa-trash-alt" onClick={() => actions.removePeople(index)} />
+						</Dropdown.Item>
+					);
+				})}
+			</DropdownButton>
 		</Navbar>
 	);
 };
