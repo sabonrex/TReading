@@ -29,7 +29,7 @@ return (
                     <Link to={`/single/${entry.name}`} state={entry.url}
                     type="button" className="btn btn-outline-primary float-start"
                     onClick={() => {
-                        if (entry.name != "Loading...") {
+                        if (entry.name != "info") {
                             actions.loadSomeData("singlefetch", 
                             {name: [entry.name], url: [entry.url]})
                         }
@@ -39,7 +39,7 @@ return (
                     
                     <button type="button" className="btn btn-outline-warning float-end"
                     onClick={() => {
-                        if (entry.name != "Loading...") {
+                        if (entry.name != "info") {
                             actions.addToFavorites("favorites",
                             {name: entry.name, url: entry.url})
                         }

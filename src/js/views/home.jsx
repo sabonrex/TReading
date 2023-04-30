@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { Card } from "../component/Card.jsx";
+import { CharactersCard } from "../component/people.jsx";
+import { PlanetsCard } from "../component/planet.jsx";
+import { VehicleCard } from "../component/vehicle.jsx";
 
 
 export const Home = () => {
@@ -9,11 +11,11 @@ export const Home = () => {
 	return (
 		<div>
 			<h1 className="mx-3">Characters</h1>
-			<Card props={store.people}/>
+			<CharactersCard props={store.people}/>
 			<h1 className="mx-3">Planets</h1>
-			<Card props={store.planets}/>
+			<PlanetsCard props={store.planets}/>
 			<h1 className="mx-3">Vehicles</h1>
-			<CardG props={store.vehicle}/>
+			<VehicleCard props={store.vehicle}/>
 		</div>
 	);
 };

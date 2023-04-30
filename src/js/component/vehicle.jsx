@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const PlanetsCard = props => {
+export const VehicleCard = props => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div className="card displaycards p-1 m-2" style={{ width: "18rem" }}>
@@ -35,7 +35,7 @@ export const PlanetsCard = props => {
 	);
 };
 
-PlanetsCard.propTypes = {
+	VehicleCard.propTypes = {
 	name: PropTypes.string,
 	consumables: PropTypes.string,
 	length: PropTypes.string,
