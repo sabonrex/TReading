@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import logo from "../../img/logo.png";
 
+
 export const Card = (props) => {
     const {store, actions} = useContext(Context)
 

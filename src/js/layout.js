@@ -3,8 +3,10 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home.jsx";
 import injectContext from "./store/appContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Single } from "./views/single.jsx";
-import { Navbar } from "./component/navbar.jsx";
+import { Planets } from "./views/pplanet.jsx";
+import { Vehicle } from "./views/vvehicle.jsx";
+import { Characters } from "./views/ppeople.jsx";
+import { NavbarMenu } from "./component/navbar.jsx";
 import { Footer } from "./component/footer";
 
 export const Layout = () => {
@@ -14,10 +16,12 @@ export const Layout = () => {
 			<BrowserRouter>
 				<ScrollToTop>
 
-							<Navbar />
+							<NavbarMenu />
 							<Routes>
 								<Route path="/" element={<Home />} />
-								<Route path="/single/*" element={<Single />} />
+								<Route path="/pplanet" element={<Planets/>} />
+								<Route path="/ppeople" element={<Characters/>} />
+								<Route path="/vvehicle" element={<Vehicle/>} />
 								<Route path="/single/Loading..." element={<h1 className="mx-3 my-1">Not found!</h1>} />
 							</Routes>
 
