@@ -1,26 +1,35 @@
-import React, { useContext, useEffect } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
-import { Context } from "../store/appContext";
+import React, { useContext, useEffect } from 'react'
+import rigoImage from '../../img/rigo-baby.jpg'
+import '../../styles/home.css'
+import { Context } from '../store/appContext'
+import { Button, Jumbotron } from 'react-bootstrap'
 
-export const Home = () => (
+export const Home = () => {
+  const { store, action } = useContext(Context)
 
-    const { store, action } = useContext(Context);
+  useEffect(() => {
+    action.fetchPeople()
+  }, [])
 
-    useEffect  ( ()=> {
-
-    },[])
-
-return (
-    <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4" />
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-            </p>
-        </div>
-    )
-    
-);
+  return (
+    <Jumbotron>
+      <h1>People</h1>
+      <span>{JSON.stringify(store.favorites)}</span>
+      <ul>
+        {store.people.map((item, index) => {
+          return (
+            <li key={index}>
+              <span>{item.name}</span>
+              <Button
+                onClick={() => action.setFavourites(item.name)}
+                variant='outline-primary'
+              >
+                Favourite
+              </Button>
+            </li>
+          )
+        })}
+      </ul>
+    </Jumbotron>
+  )
+}
