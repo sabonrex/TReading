@@ -1,21 +1,66 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Context } from "../store/appContext";
 import { CharactersCard } from "../component/people.jsx";
 import { PlanetsCard } from "../component/planet.jsx";
 import { VehicleCard } from "../component/vehicle.jsx";
-
+import { useContext, useState } from "react";
+import "../../styles/index.css";
 
 export const Home = () => {
-	const {store} = useContext(Context)
-	
+	const { store, actions } = useContext(Context);
+	const [carga, setCarga] = useState(false);
+
+	setInterval(() => {
+		store.peopleList.length > 0 && store.planetsList.length > 0 ? setCarga(true) : "";
+	}, 2000);
+	//
 	return (
 		<div>
-			<h1 className="mx-3">Characters</h1>
-			<CharactersCard props={store.people}/>
-			<h1 className="mx-3">Planets</h1>
-			<PlanetsCard props={store.planets}/>
-			<h1 className="mx-3">Vehicles</h1>
-			<VehicleCard props={store.vehicle}/>
+			<div className="cardsCont">
+				<h1 id="mainTitle">Characters Gallery</h1>
+				{carga ? (
+					<div>
+						{store.peopleList.map((item, index) => {
+							return (
+								<div key={index} className="displayCards">
+									<CharactersCard
+										name={item.name}
+										gender={item.gender}
+										hair_color={item.hair_color}
+										eye_color={item.eye_color}
+										pos={index}
+									/>
+								</div>
+							);
+						})}
+					</div>
+				) : (
+					""
+				)}
+			</div>
+			<div className="cardsCont">
+				<h1 id="mainTitle">Planets Gallery</h1>
+				{carga ? (
+					<div>
+						{store.planetsList.map((item, index) => {
+							return (
+								<div key={index} className="displayCards">
+									<PlanetsCard
+										name={item.name}
+										rotation_period={item.rotation_period}
+										climate={item.climate}
+										terrain={item.terrain}
+										population={item.population}
+										pos={index}
+									/>
+								</div>
+							);
+						})}
+					</div>
+				) : (
+					""
+				)}
+			</div>
 		</div>
 	);
 };

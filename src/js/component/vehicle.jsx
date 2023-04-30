@@ -39,6 +39,6 @@ export const VehicleCard = props => {
 	name: PropTypes.string,
 	consumables: PropTypes.string,
 	length: PropTypes.string,
-	created: PropTypes.number,
+	created: PropTypes.string,
 	manufacturer: PropTypes.string
 };

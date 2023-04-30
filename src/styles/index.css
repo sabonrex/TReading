@@ -1,3 +1,46 @@
-/* 
-    General Styles
-*/
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+  }
+  .card-footer h6{
+      margin: auto;
+      width: auto;
+      height: 150px;
+      font-size: small;
+  }
+
+  body{
+    background-image: url('https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-25.jpg');
+}
+#navlink{
+    color: white;
+}
+#mainTitle{
+    color: red;
+}
+footer p{
+    color: yellow;
+}
+.cardsCont{
+    
+    height: 700px;
+    width: 1000px;
+    overflow: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.displayCards {
+  display: inline-block;
+  
+}
+.imgCard{
+    height: 200px;
+    width: 180px;
+    margin: 8px;
+}
+.card-footer{
+    color: red;
+    border-top: solid;
+    border-top-color: red 2px;
+    border: none;
+}

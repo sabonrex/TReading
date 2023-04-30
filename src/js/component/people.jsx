@@ -40,5 +40,5 @@ CharactersCard.propTypes = {
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,
 	eye_color: PropTypes.string,
-	pos: PropTypes.number
+	pos: PropTypes.string
 };

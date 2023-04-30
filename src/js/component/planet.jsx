@@ -37,8 +37,8 @@ export const PlanetsCard = props => {
 
 PlanetsCard.propTypes = {
 	name: PropTypes.string,
-	rotation_period: PropTypes.number,
+	rotation_period: PropTypes.string,
 	climate: PropTypes.string,
-	population: PropTypes.number,
-	pos: PropTypes.number
+	population: PropTypes.string,
+	pos: PropTypes.string
 };
