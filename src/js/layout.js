@@ -1,18 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-import Container, { Navbar } from "react-bootstrap";
-import Col from "react-bootstrap";
-import Row from "react-bootstrap";
-import { Navbar } from "react-bootstrap";
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+import  { Container, Row, Col } from "react-bootstrap";
+import { Home } from "./views/home.jsx";
 import injectContext from "./store/appContext";
-import People from "./views/people";
-import Planets from "./views/planet";
-import Vehicles from "./views/vehicle";
-import { NavbarMenu } from "./component/navbar";
+import People from "./views/people.jsx";
+import Planets from "./views/planet.jsx";
+import Vehicles from "./views/vehicle.jsx";
+import { NavbarMenu } from "./component/navbar.jsx";
 
 //create your first component
 const Layout = () => {
@@ -33,7 +28,7 @@ const Layout = () => {
 					<Row>
 						<Col>
 						<Route element={<StarWars />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
+                        <Route element={<Home />} path="/home" />
                         <Route element={<People />} path="/people/:uid" />
                         <Route element={<Planets />} path="/planets/:uid" />
                         <Route element={<Vehicles />} path="/vehicles/:uid" />

@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import rigoImage from '../../img/rigo-baby.jpg'
 import '../../styles/home.css'
 import { Context } from '../store/appContext'
-import { Button, Jumbotron } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+
 
 export const Home = () => {
   const { store, action } = useContext(Context)
