@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const CharactersCard = props => {
+export const Characters = (props) => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div className="card displaycards p-1 m-2" style={{ width: "18rem" }}>
@@ -35,10 +35,10 @@ export const CharactersCard = props => {
 	);
 };
 
-CharactersCard.propTypes = {
+Characters.propTypes = {
 	name: PropTypes.string,
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,
 	eye_color: PropTypes.string,
-	pos: PropTypes.string
+	pos: PropTypes.number
 };

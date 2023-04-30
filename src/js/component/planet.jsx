@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const PlanetsCard = props => {
+export const Planets = props => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div className="card displaycards p-1 m-2" style={{ width: "18rem" }}>
@@ -35,10 +35,10 @@ export const PlanetsCard = props => {
 	);
 };
 
-PlanetsCard.propTypes = {
+Planets.propTypes = {
 	name: PropTypes.string,
 	rotation_period: PropTypes.string,
 	climate: PropTypes.string,
 	population: PropTypes.string,
-	pos: PropTypes.string
+	pos: PropTypes.number
 };

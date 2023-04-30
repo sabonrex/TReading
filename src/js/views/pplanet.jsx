@@ -3,7 +3,7 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 
-export const Planets = () => {
+export const PlanetsCard = () => {
 	const { planetsid } = useParams();
 	const { store, actions } = useContext(Context);
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { Context } from "../store/appContext";
-import { CharactersCard } from "../component/people.jsx";
-import { PlanetsCard } from "../component/planet.jsx";
-import { VehicleCard } from "../component/vehicle.jsx";
+import { PlanetsCard } from "./pplanet.jsx";
+import { CharactersCard } from "./ppeople.jsx";
+import { VehicleCard } from "./vvehicle.jsx";
 import { useContext, useState } from "react";
 import "../../styles/index.css";
 

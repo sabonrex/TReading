@@ -1,15 +1,21 @@
 import React, { useEffect, useContext } from "react";
+import { useParams} from "react-router";
 //import { Button, Card } from "react-bootstrap";
 import { Context } from "../store/appContext";
-import { useParams } from "react-router-dom";
+import "../../styles/index.css";
+import React, { useEffect, useContext } from "react";
+//import { Button, Card } from "react-bootstrap";
+import { Context } from "../store/appContext";
+
 
 export const Characters = () => {
-	const { charactersid } = useParams();
 	const { store, actions } = useContext(Context);
+	const params = useParams();
+	
 
 	useEffect(() => {
 		actions.fetchPeople();
-	}, []);
+	}, [params.category, params.id]);
 	return (
 		<>
 			<div className="card">
@@ -39,7 +45,7 @@ export const Characters = () => {
 					</h6>
 					<h6 style={{ padding: "5px", margin: "5px" }}>
 						<p>Height:</p>
-						{store.peopleList[charactersid].height}
+						{store.peopleList[charactersid.height]}
 					</h6>
 					<h6 style={{ padding: "5px", margin: "5px" }}>
 						<p>Skin Color:</p>

@@ -3,7 +3,7 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 
-export const Vehicle = () => {
+export const VehicleCard = () => {
 	const { vehicleid } = useParams();
 	const { store, actions } = useContext(Context);
 
