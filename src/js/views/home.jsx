@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Jumbotron } from "react-bootstrap";
 import { Context } from "../store/appContext";
-import { PlanetsCard } from "./pplanet.jsx";
-import { CharactersCard } from "./ppeople.jsx";
-import { VehicleCard } from "./vvehicle.jsx";
-import { useContext, useState } from "react";
-import "../../styles/index.css";
+//import { Link } from "react-router-dom";
+import "../../styles/home.css";
+import { PeopleCard } from "../component/PeopleCard.jsx";
+import { PlanetsCard } from "../component/PlanetCard.jsx";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -16,14 +16,14 @@ export const Home = () => {
 	//
 	return (
 		<div>
-			<div className="cardsCont">
+			<Jumbotron className="cardsCont">
 				<h1 id="mainTitle">Characters Gallery</h1>
 				{carga ? (
 					<div>
 						{store.peopleList.map((item, index) => {
 							return (
 								<div key={index} className="displayCards">
-									<CharactersCard
+									<PeopleCard
 										name={item.name}
 										gender={item.gender}
 										hair_color={item.hair_color}
@@ -37,8 +37,8 @@ export const Home = () => {
 				) : (
 					""
 				)}
-			</div>
-			<div className="cardsCont">
+			</Jumbotron>
+			<Jumbotron className="cardsCont">
 				<h1 id="mainTitle">Planets Gallery</h1>
 				{carga ? (
 					<div>
@@ -60,7 +60,7 @@ export const Home = () => {
 				) : (
 					""
 				)}
-			</div>
+			</Jumbotron>
 		</div>
 	);
 };

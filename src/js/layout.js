@@ -1,14 +1,13 @@
-import React from "react";
-import ScrollToTop from "./component/scrollToTop";
-import { Home } from "./views/home.jsx";
-import injectContext from "./store/appContext";
+import React, { useContext, useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Planets } from "./component/planet.jsx";
-import { Vehicle } from "./component/vehicle.jsx";
-import { Characters } from "./component/people.jsx";
+import ScrollToTop from "./component/scrollToTop";
+
+import { Home } from "./views/home.jsx";
+import injectContext, { Context } from "./store/appContext";
+
 import { NavbarMenu } from "./component/navbar.jsx";
 import { Footer } from "./component/footer";
-
+import { Characters } from "./views/people.jsx";
 
 export const Layout = () => {
 
@@ -20,9 +19,7 @@ export const Layout = () => {
 							<NavbarMenu />
 							<Routes>
 								<Route path="/" element={<Home />} />
-								<Route path="/planet" element={<Planets/>} />
-								<Route path="/people" element={<Characters/>} />
-								<Route path="/vehicle" element={<Vehicle/>} />
+								<Route path="/people" element={<Characters />} />
 								<Route path="/single/Loading..." element={<h1 className="mx-3 my-1">Not found!</h1>} />
 							</Routes>
 

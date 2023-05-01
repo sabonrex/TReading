@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const Planets = props => {
+export const VehicleCard = props => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div className="card displaycards p-1 m-2" style={{ width: "18rem" }}>
@@ -15,9 +15,9 @@ export const Planets = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">Name: {props.name}</h5>
-				<p className="card-text">Rotation Period: {props.rotation_period} </p>
-				<p className="card-text">Climate: {props.climate}</p>
-				<p className="card-text">Population: {props.population}</p>
+				<p className="card-text">Consumables: {props.consumables} </p>
+				<p className="card-text">Length: {props.length}</p>
+				<p className="card-text">Created: {props.created}</p>
 				<div className="btn-group" role="group" aria-label="Basic mixed styles example">
 					<Link to={"/planets/" + props.pos}>
 						<button type="button" className="btn btn-primary m-1">
@@ -35,10 +35,10 @@ export const Planets = props => {
 	);
 };
 
-Planets.propTypes = {
+	VehicleCard.propTypes = {
 	name: PropTypes.string,
-	rotation_period: PropTypes.string,
-	climate: PropTypes.string,
-	population: PropTypes.string,
-	pos: PropTypes.number
+	consumables: PropTypes.string,
+	length: PropTypes.string,
+	created: PropTypes.string,
+	manufacturer: PropTypes.string
 };

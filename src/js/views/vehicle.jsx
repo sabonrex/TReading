@@ -3,12 +3,12 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 
-export const PlanetsCard = () => {
-	const { planetsid } = useParams();
+export const Vehicle = () => {
+	const { vehicleid } = useParams();
 	const { store, actions } = useContext(Context);
 
 	useEffect(() => {
-		actions.fetchPlanets();
+		actions.fetchVehicle();
 	}, []);
 	return (
 		<>
@@ -22,7 +22,7 @@ export const PlanetsCard = () => {
 						/>
 					</div>
 					<div className="card-body">
-						<h1>{store.planetsList[planetsid].name}</h1>
+						<h1>{store.vehicle[vehicleid].name}</h1>
 						<p className="card-text">Lorem ipsum text</p>
 					</div>
 				</div>
@@ -31,23 +31,23 @@ export const PlanetsCard = () => {
 					style={{ color: "red", display: "inline-flex", borderTopColor: "red", margin: "auto" }}>
 					<h6 style={{ padding: "5px", margin: "5px" }}>
 						<p>Rotation Period:</p>
-						{store.planetsList[planetsid].rotation_period}
+						{store.vehicle[vehicleid].rotation_period}
 					</h6>
 					<h6 style={{ padding: "5px", margin: "5px" }}>
-						<p>Diameter:</p>
-						{store.planetsList[planetsid].diameter}
+						<p>Consumables:</p>
+						{store.vehicle[vehicleid].consumables}
 					</h6>
 					<h6 style={{ padding: "5px", margin: "5px" }}>
-						<p>Population:</p>
-						{store.planetsList[planetsid].population}
+						<p>Length:</p>
+						{store.vehicle[vehicleid].length}
 					</h6>
 					<h6 style={{ padding: "5px", margin: "5px" }}>
-						<p>Terrain:</p>
-						{store.planetsList[planetsid].terrain}
+						<p>Manufacturer</p>
+						{store.vehicle[vehicleid].manufacturer}
 					</h6>
 					<h6 style={{ padding: "5px", margin: "5px" }}>
-						<p>Gravity:</p>
-						{store.planetsList[planetsid].gravity}
+						<p>Created:</p>
+						{store.vehicle[vehicleid].created}
 					</h6>
 				</div>
 			</div>
