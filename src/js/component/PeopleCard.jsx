@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { Button } from "react-bootstrap";
+import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -9,10 +10,10 @@ export const PeopleCard = props => {
 	return (
 		<div className="card displaycards p-1 m-2" style={{ width: "18rem" }}>
 			<img
-				src="https://img.vixdata.io/pd/jpg-large/es/sites/default/files/l/luke-skywalker-last-jedi.jpeg"
-				className="card-img-top"
-				alt="..."
-			/>
+                  src={`https://starwars-visualguide.com/assets/img/characters/${params.id}.jpg`}
+                  className="img-fluid rounded-start"
+                  alt="..."
+                />
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
 				<p className="card-text">Gender: {props.gender} </p>

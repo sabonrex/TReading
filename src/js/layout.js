@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
+import "../styles/home.css"
 import { Home } from "./views/home.jsx";
 import injectContext, { Context } from "./store/appContext";
 
