@@ -9,10 +9,10 @@ export const PlanetsCard = props => {
 	return (
 		<div className="card displaycards p-1 m-2" style={{ width: "18rem" }}>
 			<img
-				src="http://pm1.narvii.com/7060/d019395f1ad6cdec7a067a7c56a0e8f2b0733a6ar1-450-450v2_00.jpg"
-				className="card-img-top"
-				alt="..."
-			/>
+          		className="card-img-top"
+          		src={props.image}
+          		alt="Card image cap"
+        		></img>
 			<div className="card-body">
 				<h5 className="card-title">Name: {props.name}</h5>
 				<p className="card-text">Rotation Period: {props.rotation_period} </p>

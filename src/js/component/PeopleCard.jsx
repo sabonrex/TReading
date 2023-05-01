@@ -10,10 +10,10 @@ export const PeopleCard = props => {
 	return (
 		<div className="card displaycards p-1 m-2" style={{ width: "18rem" }}>
 			<img
-				src="https://img.vixdata.io/pd/jpg-large/es/sites/default/files/l/luke-skywalker-last-jedi.jpeg"
-				className="card-img-top"
-				alt="..."
-			/>
+          		className="card-img-top"
+          		src={props.image}
+          		alt="Card image cap"
+        		></img>
 			<div className="card-body">
 				<h5 className="card-title">{props.name}</h5>
 				<p className="card-text">Gender: {props.gender} </p>
